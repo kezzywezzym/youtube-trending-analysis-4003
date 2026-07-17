@@ -1,5 +1,11 @@
 from data_loader import load_data
-from processor import total_videos, total_channels
+from processor import (
+    total_videos,
+    total_channels,
+    category_summary,
+    search_video,
+    top_ten_videos
+)
 
 
 videos = []
@@ -27,7 +33,9 @@ while True:
         print("\nProcessing Menu")
         print("1. Total Videos")
         print("2. Total Channels")
-        print("3. Back")
+        print("3. Category Summary")
+        print("4. Search Video")
+        print("5. Back")
 
         process = input("Choose an option: ")
 
@@ -38,7 +46,13 @@ while True:
             total_channels(videos)
 
         elif process == "3":
-            continue
+            category_summary(videos)
+
+        elif process == "4":
+            search_video(videos)
+
+        elif process == "5":
+            top_ten_videos(videos)
 
         else:
             print("Invalid processing option.")

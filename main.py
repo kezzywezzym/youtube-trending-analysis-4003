@@ -1,6 +1,5 @@
+from processor import total_videos
 from data_loader import load_data
-
-
 
 
 
@@ -38,6 +37,17 @@ while True:
     if choice == "1":
 
         videos = load_data()
+
+    elif choice == "2":
+
+        print("\nProcessing Menu")
+        print("1. Total Videos")
+        print("2. Back")
+
+        process_choice = input("Choose an option: ")
+
+        if process_choice == "1":
+            total_videos(videos)
 
     elif choice == "5":
 

@@ -1,66 +1,52 @@
-from processor import total_videos, total_channels
 from data_loader import load_data
-
-
-
-def display_menu():
-
-    print("\n--------------------------------")
-
-    print("YouTube Trending Videos")
-
-    print("--------------------------------")
-
-    print("1. Load Data")
-
-    print("2. Process Data")
-
-    print("3. Visualise Data")
-
-    print("4. Export Data")
-
-    print("5. Exit")
+from processor import total_videos, total_channels
 
 
 videos = []
 
-
 while True:
-
-    display_menu()
+    print("\n--------------------------------")
+    print("YouTube Trending Videos")
+    print("--------------------------------")
+    print("1. Load Data")
+    print("2. Process Data")
+    print("3. Visualise Data")
+    print("4. Export Data")
+    print("5. Exit")
 
     choice = input("Enter your choice: ")
 
-
     if choice == "1":
-
         videos = load_data()
 
-
     elif choice == "2":
-
-        if len(videos) == 0:
-
+        if not videos:
             print("Please load the data first.")
+            continue
+
+        print("\nProcessing Menu")
+        print("1. Total Videos")
+        print("2. Total Channels")
+        print("3. Back")
+
+        process = input("Choose an option: ")
+
+        if process == "1":
+            total_videos(videos)
+
+        elif process == "2":
+            total_channels(videos)
+
+        elif process == "3":
+            continue
+
         else:
-            print("\nProcessing Menu")
-            print("1. Total Videos")
-            print("2. Total Channels")
-            print("3. Back")
-
-            process_choice = input("Choose an option: ")
-
-            if process_choice == "1":
-                total_videos(videos)
+            print("Invalid processing option.")
 
     elif choice == "5":
-
         print("Goodbye!")
-
         print("Thank you for using the program.")
-
         break
 
     else:
-
         print("This option is not ready yet.")

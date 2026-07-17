@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 
+
 def category_pie_chart(videos):
 
     category_names = {
@@ -24,7 +25,6 @@ def category_pie_chart(videos):
     categories = {}
 
     for video in videos:
-
         category = category_names.get(video.category, video.category)
 
         if category in categories:
@@ -48,11 +48,11 @@ def category_pie_chart(videos):
     )
 
     plt.title("Distribution of YouTube Videos by Category")
-
     plt.show()
 
 
 def views_histogram(videos):
+
     views = []
 
     for video in videos:
@@ -60,7 +60,7 @@ def views_histogram(videos):
 
     plt.figure(figsize=(8, 5))
 
-    plt.hist(views, bins=10)
+    plt.hist(views, bins=15)
 
     plt.title("Distribution of Video Views")
     plt.xlabel("Views")
@@ -68,20 +68,39 @@ def views_histogram(videos):
 
     plt.show()
 
-    def views_histogram(videos):
 
-        views = []
+def likes_histogram(videos):
 
-        for video in videos:
-            views.append(video.views)
+    likes = []
 
-        plt.figure(figsize=(8, 5))
+    for video in videos:
+        likes.append(video.likes)
 
-        plt.hist(views, bins=15)
+    plt.figure(figsize=(8, 5))
 
-        plt.title("Distribution of Video Views")
-        plt.xlabel("Views")
-        plt.ylabel("Videos")
+    plt.hist(likes, bins=15)
 
-        plt.show()
+    plt.title("Distribution of Video Likes")
+    plt.xlabel("Likes")
+    plt.ylabel("Number of Videos")
+
+    plt.show()
+
+
+def comments_histogram(videos):
+
+    comments = []
+
+    for video in videos:
+        comments.append(video.comments)
+
+    plt.figure(figsize=(8, 5))
+
+    plt.hist(comments, bins=15)
+
+    plt.title("Distribution of Video Comments")
+    plt.xlabel("Comments")
+    plt.ylabel("Number of Videos")
+
+    plt.show()
 

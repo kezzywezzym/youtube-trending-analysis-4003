@@ -1,3 +1,5 @@
+from exports import export_video
+
 from charts import (
     category_pie_chart,
     views_histogram,
@@ -90,6 +92,12 @@ while True:
 
         else:
             print("Invalid option.")
+
+    elif choice == "4":
+        if not videos:
+            print("Please load the data first.")
+        else:
+            export_video(videos)
 
     elif choice == "5":
         print("Goodbye!")

@@ -1,3 +1,4 @@
+from charts import category_pie_chart
 from data_loader import load_data
 from processor import (
     total_videos,
@@ -35,7 +36,7 @@ while True:
         print("2. Total Channels")
         print("3. Category Summary")
         print("4. Search Video")
-        print("5. Back")
+        print("5. Top 10 Videos")
 
         process = input("Choose an option: ")
 
@@ -57,6 +58,12 @@ while True:
         else:
             print("Invalid processing option.")
 
+    elif choice == "3":
+        if not videos:
+            print("Please load the data first.")
+        else:
+            category_pie_chart(videos)
+
     elif choice == "5":
         print("Goodbye!")
         print("Thank you for using the program.")
@@ -64,3 +71,4 @@ while True:
 
     else:
         print("This option is not ready yet.")
+

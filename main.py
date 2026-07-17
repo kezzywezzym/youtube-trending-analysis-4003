@@ -1,3 +1,7 @@
+from data_loader import load_data
+
+videos = load_data()
+
 print("--------------------------------------------------")
 
 print("YouTube Trending Videos")

@@ -36,10 +36,52 @@ def category_pie_chart(videos):
 
     plt.pie(
         categories.values(),
-        labels=categories.keys(),
-        autopct="%1.1f%%"
+        autopct="%1.1f%%",
+        startangle=90
+    )
+
+    plt.legend(
+        categories.keys(),
+        title="Categories",
+        loc="center left",
+        bbox_to_anchor=(1, 0.5)
     )
 
     plt.title("Distribution of YouTube Videos by Category")
 
     plt.show()
+
+
+def views_histogram(videos):
+    views = []
+
+    for video in videos:
+        views.append(video.views)
+
+    plt.figure(figsize=(8, 5))
+
+    plt.hist(views, bins=10)
+
+    plt.title("Distribution of Video Views")
+    plt.xlabel("Views")
+    plt.ylabel("Number of Videos")
+
+    plt.show()
+
+    def views_histogram(videos):
+
+        views = []
+
+        for video in videos:
+            views.append(video.views)
+
+        plt.figure(figsize=(8, 5))
+
+        plt.hist(views, bins=15)
+
+        plt.title("Distribution of Video Views")
+        plt.xlabel("Views")
+        plt.ylabel("Videos")
+
+        plt.show()
+

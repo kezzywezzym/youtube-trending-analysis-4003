@@ -1,4 +1,4 @@
-from charts import category_pie_chart
+from charts import category_pie_chart, views_histogram
 from data_loader import load_data
 from processor import (
     total_videos,
@@ -57,11 +57,35 @@ while True:
         else:
             print("Invalid processing option.")
 
+
     elif choice == "3":
+
         if not videos:
             print("Please load the data first.")
-        else:
+
+            continue
+
+        print("\nVisualisation Menu")
+
+        print("1. Pie Chart")
+
+        print("2. Views Histogram")
+
+        visual = input("Choose an option: ")
+
+        if visual == "1":
+
             category_pie_chart(videos)
+
+
+        elif visual == "2":
+
+            views_histogram(videos)
+
+
+        else:
+
+            print("Invalid option.")
 
     elif choice == "5":
         print("Goodbye!")

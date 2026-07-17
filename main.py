@@ -1,4 +1,4 @@
-from processor import total_videos
+from processor import total_videos, total_channels
 from data_loader import load_data
 
 
@@ -22,8 +22,6 @@ def display_menu():
     print("5. Exit")
 
 
-
-
 videos = []
 
 
@@ -38,16 +36,22 @@ while True:
 
         videos = load_data()
 
+
     elif choice == "2":
 
-        print("\nProcessing Menu")
-        print("1. Total Videos")
-        print("2. Back")
+        if len(videos) == 0:
 
-        process_choice = input("Choose an option: ")
+            print("Please load the data first.")
+        else:
+            print("\nProcessing Menu")
+            print("1. Total Videos")
+            print("2. Total Channels")
+            print("3. Back")
 
-        if process_choice == "1":
-            total_videos(videos)
+            process_choice = input("Choose an option: ")
+
+            if process_choice == "1":
+                total_videos(videos)
 
     elif choice == "5":
 

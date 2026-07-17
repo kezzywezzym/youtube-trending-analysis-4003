@@ -1,29 +1,41 @@
 from data_loader import load_data
 
-videos = load_data()
 
-print("--------------------------------------------------")
+def display_menu():
+    print("--------------------------------------------------")
+    print("YouTube Trending Videos")
+    print("--------------------------------------------------")
+    print()
+    print("1. Load Data")
+    print("2. Process Data")
+    print("3. Visualise Data")
+    print("4. Export Data")
+    print("5. Exit")
 
-print("YouTube Trending Videos")
 
-print("--------------------------------------------------")
+display_menu()
 
-print()
+def main():
 
-print("1. Load Data")
+    videos = None
 
-print()
+    display_menu()
 
-print("2. Process Data")
 
-print()
+    choice = input("Enter your choice: ")
 
-print("3. Visualise Data")
+    if choice == "1":
 
-print()
+        videos = load_data()
 
-print("4. Export Data")
 
-print()
+    elif choice == "5":
 
-print("5. Exit")
+        print("Goodbye.")
+
+
+    else:
+
+        print("This option is not ready yet.")
+
+main()

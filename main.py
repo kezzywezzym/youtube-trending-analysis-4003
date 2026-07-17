@@ -8,7 +8,6 @@ from processor import (
     top_ten_videos
 )
 
-
 videos = []
 
 while True:
